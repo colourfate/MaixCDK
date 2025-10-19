@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd root/dist/thermal_camera_release && ./thermal_camera
+

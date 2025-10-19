@@ -1,0 +1,10 @@
+id=maixcam
+name=MaixCAM
+panel=st7701_hd228001c31
+cam_mclk=1
+cam_flip=0
+cam_mirror=0
+disp_flip=0
+disp_mirror=0
+disp_max_backlight=50
+

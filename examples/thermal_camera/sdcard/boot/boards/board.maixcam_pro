@@ -1,0 +1,10 @@
+id=maixcam_pro
+name=MaixCAM-Pro
+panel=st7701_lct024bsi20
+cam_mclk=0
+cam_flip=1
+cam_mirror=1
+disp_flip=1
+disp_mirror=0
+disp_max_backlight=50
+

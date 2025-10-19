@@ -1,0 +1,191 @@
+{
+    "asio": [
+        {
+            "url": "https://phoenixnap.dl.sourceforge.net/project/asio/asio/1.28.0%20%28Stable%29/asio-1.28.0.tar.gz",
+            "urls": [],
+            "sites": [
+                "https://sourceforge.net/projects/asio/files/asio/1.28.0%20%28Stable%29/"
+            ],
+            "sha256sum": "e854a53cc6fe599bdf830e3c607f1d22fe74eee892f64c81d3ca997a80ddca97",
+            "filename": "asio-1.28.0.tar.gz",
+            "path": "asio",
+            "check_files": [
+                "asio-1.28.0"
+            ],
+            "pkg_path": "/mnt/d/Workspace/LicheeRV_Nano/code/MaixCDK/dl/pkgs/asio/asio-1.28.0.tar.gz"
+        }
+    ],
+    "FFmpeg": [
+        {
+            "url": "https://github.com/sipeed/MaixCDK/releases/download/v0.0.0/ffmpeg_libs_n4.4.4.1.tar.xz",
+            "urls": [],
+            "sites": [
+                "https://github.com/sipeed/MaixCDK/releases/tag/v0.0.0"
+            ],
+            "sha256sum": "d4b8eb70a7864c855e8e286fef39b9b90faf72c1b77491148c451da252cad6c0",
+            "filename": "ffmpeg_libs_n4.4.4.1.tar.xz",
+            "path": "ffmpeg_srcs",
+            "check_files": [
+                "ffmpeg"
+            ],
+            "rename": {
+                "ffmpeg_libs_n4.4.4.1": "ffmpeg"
+            },
+            "pkg_path": "/mnt/d/Workspace/LicheeRV_Nano/code/MaixCDK/dl/pkgs/ffmpeg_srcs/ffmpeg_libs_n4.4.4.1.tar.xz"
+        }
+    ],
+    "eigen": [
+        {
+            "url": "https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.zip",
+            "urls": [],
+            "sites": [
+                "https://eigen.tuxfamily.org/index.php"
+            ],
+            "sha256sum": "1ccaabbfe870f60af3d6a519c53e09f3dcf630207321dffa553564a8e75c4fc8",
+            "filename": "eigen-3.4.0.zip",
+            "path": "eigen",
+            "check_files": [
+                "eigen-3.4.0"
+            ],
+            "pkg_path": "/mnt/d/Workspace/LicheeRV_Nano/code/MaixCDK/dl/pkgs/eigen/eigen-3.4.0.zip"
+        }
+    ],
+    "brotli": [
+        {
+            "url": "https://master.dl.sourceforge.net/project/brotli.mirror/v1.1.0/v1.1.0.tar.gz?viasf=1",
+            "urls": [],
+            "sites": [],
+            "sha256sum": "10973f4b4199eafa1d5735ef661ddb2ec2f97319ee9fd1824d4aabe08cff5265",
+            "filename": "brotli-1.1.0.tar.gz",
+            "path": "brotli_srcs",
+            "check_files": [
+                "google-brotli-1.1.0"
+            ],
+            "pkg_path": "/mnt/d/Workspace/LicheeRV_Nano/code/MaixCDK/dl/pkgs/brotli_srcs/brotli-1.1.0.tar.gz"
+        }
+    ],
+    "harfbuzz": [
+        {
+            "url": "https://github.com/harfbuzz/harfbuzz/releases/download/8.2.1/harfbuzz-8.2.1.tar.xz",
+            "urls": [],
+            "sites": [],
+            "sha256sum": "0fec78f98c9c8faf228957a201c8846f809452c20f8445eb092a1ba6f22dbea5",
+            "filename": "harfbuzz-8.2.1.tar.xz",
+            "path": "harfbuzz_srcs",
+            "check_files": [
+                "harfbuzz-8.2.1"
+            ],
+            "pkg_path": "/mnt/d/Workspace/LicheeRV_Nano/code/MaixCDK/dl/pkgs/harfbuzz_srcs/harfbuzz-8.2.1.tar.xz"
+        }
+    ],
+    "sdl": [
+        {
+            "url": "https://github.com/libsdl-org/SDL/releases/download/release-2.28.4/SDL2-2.28.4.tar.gz",
+            "urls": [],
+            "sites": [
+                "https://github.com/libsdl-org/SDL/releases"
+            ],
+            "sha256sum": "888b8c39f36ae2035d023d1b14ab0191eb1d26403c3cf4d4d5ede30e66a4942c",
+            "filename": "SDL2-2.28.4.tar.gz",
+            "path": "sdl_srcs",
+            "check_files": [
+                "SDL2-2.28.4"
+            ],
+            "rename": {},
+            "pkg_path": "/mnt/d/Workspace/LicheeRV_Nano/code/MaixCDK/dl/pkgs/sdl_srcs/SDL2-2.28.4.tar.gz"
+        }
+    ],
+    "freetype": [
+        {
+            "url": "https://phoenixnap.dl.sourceforge.net/project/freetype/freetype2/2.13.2/freetype-2.13.2.tar.xz",
+            "urls": [],
+            "sites": [],
+            "sha256sum": "12991c4e55c506dd7f9b765933e62fd2be2e06d421505d7950a132e4f1bb484d",
+            "filename": "freetype-2.13.2.tar.xz",
+            "path": "freetype_srcs",
+            "check_files": [
+                "freetype-2.13.2"
+            ],
+            "pkg_path": "/mnt/d/Workspace/LicheeRV_Nano/code/MaixCDK/dl/pkgs/freetype_srcs/freetype-2.13.2.tar.xz"
+        }
+    ],
+    "cvi_tpu": [],
+    "websocket": [
+        {
+            "url": "https://master.dl.sourceforge.net/project/websocket.mirror/0.8.2/WebSocket%2B%2B_0.8.2.tar.gz?viasf=1",
+            "urls": [],
+            "sites": [
+                "https://github.com/sipeed/MaixCDK/releases/tag/v0.0.0"
+            ],
+            "sha256sum": "8b1773ea2832751071ac19d2708314d68316dd3916434c7dc0dd58cef14d51cd",
+            "filename": "WebSocketpp_0.8.2.tar.gz",
+            "path": "websocketpp",
+            "check_files": [
+                "websocketpp-0.8.2"
+            ],
+            "rename": {
+                "zaphoyd-websocketpp-0e42417": "websocketpp-0.8.2"
+            },
+            "pkg_path": "/mnt/d/Workspace/LicheeRV_Nano/code/MaixCDK/dl/pkgs/websocketpp/WebSocketpp_0.8.2.tar.gz"
+        }
+    ],
+    "zbar": [
+        {
+            "url": "https://github.com/ZBar/ZBar/archive/refs/tags/0.10.tar.gz",
+            "urls": [],
+            "sites": [],
+            "sha256sum": "de0d19b3edf53e85b3bb8fdf09a800aec960d3811185f59e2fb964bf7534ce01",
+            "filename": "ZBar-0.10.tar.gz",
+            "path": "zbar_srcs",
+            "check_files": [
+                "ZBar-0.10"
+            ],
+            "pkg_path": "/mnt/d/Workspace/LicheeRV_Nano/code/MaixCDK/dl/pkgs/zbar_srcs/ZBar-0.10.tar.gz"
+        }
+    ],
+    "media_server": [
+        {
+            "url": "https://github.com/sipeed/MaixCDK/releases/download/v0.0.0/media_server-1.0.2.zip",
+            "urls": [],
+            "sites": [],
+            "sha256sum": "b9872dbe52fae4d4b60a0db827533877b20186e9457525345407fdad8e187704",
+            "filename": "media_server-1.0.2.zip",
+            "path": "media_server",
+            "check_files": [
+                "media_server-1.0.2"
+            ],
+            "pkg_path": "/mnt/d/Workspace/LicheeRV_Nano/code/MaixCDK/dl/pkgs/media_server/media_server-1.0.2.zip"
+        }
+    ],
+    "opencv": [
+        {
+            "url": "https://github.com/opencv/ade/archive/v0.1.2b.zip",
+            "urls": [],
+            "sites": [
+                "https://github.com/opencv/ade"
+            ],
+            "sha256sum": "a1d2a21e78a5a1b7bd41697a562669d5b5a8e2ab89e8a654c0a80a82aff28e19",
+            "filename": "4f93a0844dfc463c617d83b09011819a-v0.1.2b.zip",
+            "path": "opencv/cache/ade",
+            "check_files": [
+                "opencv-0.1.2b"
+            ],
+            "rename": {},
+            "extract": false,
+            "pkg_path": "/mnt/d/Workspace/LicheeRV_Nano/code/MaixCDK/dl/pkgs/opencv/cache/ade/4f93a0844dfc463c617d83b09011819a-v0.1.2b.zip"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/opencv/opencv_3rdparty/1224f78da6684df04397ac0f40c961ed37f79ccb/ippicv/ippicv_2021.8_lnx_intel64_20230330_general.tgz",
+            "urls": [],
+            "sites": [],
+            "sha256sum": "7cfe0fb0e15ea8f3d2d971c19df2d14382469943d4efa85e48bf358930daa85d",
+            "filename": "43219bdc7e3805adcbe3a1e2f1f3ef3b-ippicv_2021.8_lnx_intel64_20230330_general.tgz",
+            "path": "opencv/cache/ippicv",
+            "check_files": [],
+            "rename": {},
+            "extract": false,
+            "pkg_path": "/mnt/d/Workspace/LicheeRV_Nano/code/MaixCDK/dl/pkgs/opencv/cache/ippicv/43219bdc7e3805adcbe3a1e2f1f3ef3b-ippicv_2021.8_lnx_intel64_20230330_general.tgz"
+        }
+    ],
+    "toolchain": []
+}

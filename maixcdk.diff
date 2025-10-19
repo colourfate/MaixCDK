@@ -1,0 +1,76 @@
+diff --git a/components/3rd_party/ax620e_msp/component.py b/components/3rd_party/ax620e_msp/component.py
+index 418cd3f..9f0fd72 100644
+--- a/components/3rd_party/ax620e_msp/component.py
++++ b/components/3rd_party/ax620e_msp/component.py
+@@ -7,17 +7,17 @@ def add_file_downloads(confs : dict) -> list:
+ 
+     return [
+         {
+-            'url': f"https://github.com/sipeed/MaixCDK/releases/download/v0.0.0/ax620e_msp_arm64_glibc_v3.0.0_20241120230136.tar.xz",
++            'url': f"https://github.com/sipeed/MaixCDK/releases/download/v0.0.0/maixcam2_msp_arm64_glibc_v3.0.0_20241120230136.tar.xz",
+             'urls': [],
+             'sites': ["https://github.com/sipeed/MaixCDK/releases/tag/v0.0.0"],
+-            'sha256sum': "ce07ad0bd4301bb9659a6d0353120b1c9772db832c5ceb5c0a31aab4943b8627",
+-            'filename': f"ax620e_msp_arm64_glibc_v3.0.0_20241120230136.tar.xz",
+-            'path': f"ax620e_msp_srcs",
++            'sha256sum': "4fb40c4ee1e75cbf673dc4f3a8101a79e287515acb151fdf3b889207eaf4d526",
++            'filename': f"maixcam2_msp_arm64_glibc_v3.0.0_20241120230136.tar.xz",
++            'path': f"maixcam2_msp_srcs",
+             'check_files': [
+-                'ax620e_msp'
++                'maixcam2_msp'
+             ],
+             'rename': {
+-                f'ax620e_msp_arm64_glibc_v3.0.0_20241120230136': 'ax620e_msp'
++                f'maixcam2_msp_arm64_glibc_v3.0.0_20241120230136': 'maixcam2_msp'
+             }
+         },
+     ]
+diff --git a/components/3rd_party/lvgl/driver/monitor.cpp b/components/3rd_party/lvgl/driver/monitor.cpp
+index 4ec4ee6..1226dae 100644
+--- a/components/3rd_party/lvgl/driver/monitor.cpp
++++ b/components/3rd_party/lvgl/driver/monitor.cpp
+@@ -48,12 +48,22 @@ void monitor_rect(int* w, int* h)
+  * @param area an area where to copy `color_p`
+  * @param color_p an array of pixel to copy to the `area` part of the screen
+  */
++
++static void reverse_memcpy_u32(void *dest, const void *src, size_t n)
++{
++    uint32_t *d = (uint32_t *)dest;
++    const uint32_t *s = (const uint32_t *)src;
++    for (size_t i = 0; i < n; i++) {
++        d[i] = s[n - 1 - i];
++    }
++}
++
+ void monitor_flush(lv_display_t *disp_drv, const lv_area_t * area, uint8_t *px_map)
+ {
+     assert(LV_COLOR_DEPTH == 32);
+-    uint32_t * color_p = (uint32_t *)px_map; 
++    uint32_t * color_p = (uint32_t *)px_map;
+ 
+-//    printf("x1:%d,y1:%d,x2:%d,y2:%d\n", area->x1, area->y1, area->x2, area->y2);
++    //printf("res: (%dx%d), x1:%d,y1:%d,x2:%d,y2:%d\n", hres, vres, area->x1, area->y1, area->x2, area->y2);
+ 
+     /*Return if the area is out the screen*/
+     if(area->x2 < 0 || area->y2 < 0 || area->x1 >= hres || area->y1 >= vres) {
+@@ -64,8 +74,16 @@ void monitor_flush(lv_display_t *disp_drv, const lv_area_t * area, uint8_t *px_m
+     int32_t y;
+     uint32_t w = lv_area_get_width(area);
+     assert(maix_image->data());
+-    for(y = area->y1; y <= area->y2 && y < vres; y++) {
+-        memcpy(((uint32_t*)maix_image->data()) + y * hres + area->x1, color_p, (area->x2 - area->x1 + 1) * 4);
++    // for(y = area->y1; y <= area->y2 && y < vres; y++) {
++    //     memcpy(((uint32_t*)maix_image->data()) + y * hres + area->x1, color_p, (area->x2 - area->x1 + 1) * 4);
++    //     color_p += w;
++    // }
++    uint32_t y1_r = vres - area->y1;
++    uint32_t x1_r = hres - area->x1;
++    uint32_t x2_r = hres - area->x2;
++    uint32_t y2_r = vres - area->y2;
++    for(y = y1_r; y >= y2_r; y--) {
++        reverse_memcpy_u32(((uint32_t*)maix_image->data()) + y * hres + x2_r, color_p, x1_r - x2_r + 1);
+         color_p += w;
+     }
+ 
